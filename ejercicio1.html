@@ -1,0 +1,100 @@
+<script>
+
+    class numero {
+        constructor(num1, num2) {
+            this.num1 = num1;
+            this.num2 = num2;
+        }
+        get getNum1() {
+            return this.num1;
+        }
+        get getNum2() {
+            return this.num2;
+        }
+    }
+
+
+    function pedirNumero() {
+        let num1 = parseInt(prompt("Ingrese el primer numero: "));
+        let num2 = parseInt(prompt("Ingrese el segundo numero: "));
+        const number = new numero(num1, num2);
+        return number;
+    }
+
+    function suma() {
+        const recibir = pedirNumero();
+        let sum = parseInt(recibir.getNum1 + recibir.getNum2);
+        alert("La suma de los dos numeros Ingresados es: " + sum);
+    }
+    function resta() {
+        const recibir = pedirNumero();
+        let res = parseInt(recibir.getNum1 - recibir.getNum2);
+        alert("La resta de los dos numeros Ingresados es: " + res);
+    }
+
+    function multipli() {
+        const recibir = pedirNumero();
+        let mul = parseInt(recibir.getNum1 * recibir.getNum2);
+        alert("La resta de los dos numeros Ingresados es: " + mul);
+    }
+
+    function division() {
+        const recibir = pedirNumero();
+        let div = parseInt(recibir.getNum1 / recibir.getNum2);
+        alert("La resta de los dos numeros Ingresados es: " + div);
+    }
+
+    function potencia(){
+        const recibir = pedirNumero();
+        let pot = parseInt(Math.pow(recibir.getNum1,recibir.getNum2));
+        alert("La Potencia es : " + pot);
+    }
+    
+    function cuadrada(){
+        let num1 = parseInt(prompt("Ingrese el primer numero: "));
+        let cua = Math.sqrt(num1);
+        alert("La Potencia es : " + cua);
+    }
+
+    function cubica(){
+        let num1 = parseInt(prompt("Ingrese el primer numero: "));
+        let cub = Math.cbrt(num1);
+        alert("La Potencia es : " + cub);
+    }
+
+
+
+    do {
+        let entrada = prompt(`Ingrese la operacion que realizara:
+                     <br>S == Suma
+                     <br>R == Resta
+                     <br>M == Multiplicacion
+                     <br>D == Division
+                     <br>P == Potencia
+                     <br>A == Raiz Cuadrada
+                     <br>C == Raiz Cubica
+                     <br>O ==Salir`);
+        var convertir = entrada.toLowerCase();
+
+        switch (convertir) {
+            case 's': suma();
+                break;
+            case 'r': resta();
+                break;
+            case 'm': multipli();
+                break;
+            case 'd': division();
+                break;
+            case 'p': potencia();
+                break;
+            case 'a': cuadrada();
+            break;
+            case 'c': cubica();
+            break;
+            case 'o': alert("Gracias por usar el programa");
+            break;
+            default: alert("Esa opcion no existe");
+            break;
+        }
+    } while(convertir!="o")
+</script>
