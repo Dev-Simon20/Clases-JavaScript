@@ -1,0 +1,91 @@
+<script>
+    class materia {
+        constructor(curso, prof, alumnos) {
+            this.curso = curso;
+            this.prof = prof;
+            this.alumnos = alumnos;
+        }
+
+        get getcurso() {
+            return this.curso;
+        }
+        get getProf() {
+            return this.prof;
+        }
+        get getAlumnos() {
+            return this.alumnos;
+        }
+    }
+
+    function detallesClase() {
+        let encontrado = false;
+        let mat = prompt("Ingrese el nombre de la materia");
+        for (let i = 0; i < clase.length; i++) {
+            if (clase[i].getcurso == mat) {
+                alert(clase[i].getProf + " " + clase[i].getAlumnos);
+                encontrado = true;
+            }
+        }
+        if (encontrado == false) {
+            alert("no se encontro la Materia");
+        }
+    }
+
+    function numClase() {
+        let contador = 0;
+        for (let i = 0; i < clase.length; i++) {
+            let buscar = clase[i].getAlumnos;
+            if (buscar.includes("cofla")) {
+                contador++;
+            }
+        }
+        alert("Cofla esta estudiando en " + contador+" clases");
+    }
+
+    function clasesC() {
+        let encontrado = "";
+        for (let i = 0; i < clase.length; i++) {
+            let buscar = clase[i].getAlumnos;
+            if (buscar.includes("cofla")) {
+                encontrado += "Esta en la clase de " + clase[i].getcurso + " con el profesor: " + clase[i].getProf + "\n";
+            }
+        }
+        alert(encontrado);
+    }
+
+
+    var list1 = ["juan", "jair", "jose", "alberto", "cofla"];
+    var list2 = ["juan", "jair", "jose", "alberto"];
+    var list3 = ["juan", "jose", "Alberto", "cofla", "alex"];
+
+    const clase = [];
+    clase.push(new materia("Calculo", "Ruben", list1));
+    clase.push(new materia("Fisica", "Araujo", list2));
+    clase.push(new materia("Circuitos", "Pumacagua", list3));
+
+    do {
+        var opcion = parseInt(prompt(`Menu de opciones
+                1-Detalles de la clase:
+                2-Cuantas clase esta cofla:
+                3-Nombrar las clases de cofla
+                4-Salir`));
+        switch (opcion) {
+            case 1: detallesClase();
+                break;
+            case 2: numClase();
+                break;
+            case 3: clasesC();
+                break;
+            case 4: alert("Gracias por usar el programa");
+                break;
+            default:alert( "opcion Incorrecta");
+                break;
+        }
+
+    } while (opcion != 4);
+
+
+
+
+
+</script>
